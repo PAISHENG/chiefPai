@@ -1,0 +1,1 @@
+insert into Role(authority,test) values('user', 'test')
