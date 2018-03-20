@@ -26,7 +26,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/springData" />
 		<property name="username" value="root" />
-		<property name="password" value="hoc123251845" />
+		<property name="password" value="sa123456" />
 		<!-- <property name="defaultAutoCommit" value="false" /> -->
 	</bean>
 
@@ -71,33 +71,9 @@
 	<!-- <bean id="multipartResolver" -->
 	<!-- class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
 		/> -->
-	<context:component-scan base-package="tw.com.pai.controller" />
-	<context:component-scan base-package="tw.com.pai.service" />
+
 	<context:component-scan base-package="tw.com.pai.dao" />
 	<mvc:annotation-driven />
 
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/views/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
-	</bean>
 
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-
-	<!-- step 2 mybatis sqlSessionFactory -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-    </bean>
- 
-     <!-- step 3 mapper -->
-    <bean id="mapper" class="org.mybatis.spring.mapper.MapperFactoryBean" >
-        <property name="mapperInterface" value="tw.com.pai.dao.mybatis.CarMapper" />
-        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean>
-    
-    <bean id="carService" class="tw.com.pai.service.CarService" />
 </beans>

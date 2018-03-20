@@ -37,6 +37,7 @@ public class LoginController {
 			+ "?ex_ch=tse_2330.tw&json=1&delay=0&_=";
 //	http://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_1102.tw&json=1&delay=0&_=1513517057719
 	private final String INDEX="http://mis.twse.com.tw/stock/index.jsp";
+	
 	@Autowired
 	TWSEService twseService;
 	
