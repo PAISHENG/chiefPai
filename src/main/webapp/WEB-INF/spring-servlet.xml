@@ -26,7 +26,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/springData" />
 		<property name="username" value="root" />
-		<property name="password" value="sa123456" />
+		<property name="password" value="hoc123251845" />
 		<!-- <property name="defaultAutoCommit" value="false" /> -->
 	</bean>
 
@@ -86,6 +86,37 @@
 		</property>
 	</bean>
 
+<!-- step1:Put static resources like cs, js or images into this folder webapp\resources -->
+<!-- step2:Create a Spring mvc:resources mapping -->
+<!-- step3:Include in JSP page via JSTL tag c:url or Spring tag spring:url -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<bean id="customJobFactory" class="tw.com.pai.utils.CustomJobFactory"></bean>  
+     <!-- 定时任务配置 start -->  
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">    
+        <property name="dataSource" ref="dataSource"></property>      
+        <!-- 可选，QuartzScheduler 启动时更新己存在的Job，这样就不用每次修改targetObject后删除qrtz_job_details表对应记录了 -->        
+        <property name="overwriteExistingJobs" value="true" />        
+         <!-- 必须的，QuartzScheduler 延时启动，应用启动完后 QuartzScheduler 再启动  -->     
+        <property name="startupDelay" value="2" />      
+        <!-- 设置自动启动  -->     
+        <property name="autoStartup" value="true" />    
+        <property name="jobFactory" ref="customJobFactory"></property>  
+        <property name="applicationContextSchedulerContextKey" value="applicationContextKey" />  
+        <property name="configLocation" value="classpath:quartz/spring-quartz.properties" />        
+    </bean>  
+    <!-- 定时任务配置 end -->  
 
+	<!-- step 2 mybatis sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+ 
+     <!-- step 3 mapper -->
+    <bean id="mapper" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+        <property name="mapperInterface" value="tw.com.pai.dao.mybatis.CarMapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    
+    <bean id="carService" class="tw.com.pai.service.CarService" />
 </beans>
