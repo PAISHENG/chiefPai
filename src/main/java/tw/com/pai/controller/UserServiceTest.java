@@ -90,9 +90,9 @@ public class UserServiceTest {
 
 	@Test
 	public void testDeleteUser() {
-		User user = userService.getUserById(1);
+		User user = userService.getUserById(2);
 		userService.deleteUser(user.getId());
-		User deletedUser = userService.getUserById(1);
+		User deletedUser = userService.getUserById(2);
 		Assert.assertNull(deletedUser);
 
 	}
