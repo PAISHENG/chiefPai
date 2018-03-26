@@ -5,8 +5,9 @@
 <configuration>
 	<properties resource='system.properties' />
 	<typeAliases>
-		<typeAlias type='tw.com.pai.model.User'
-			alias='User'></typeAlias>
+		<typeAlias type='tw.com.pai.model.User' alias='User'></typeAlias>
+		<typeAlias type='tw.com.pai.model.Car' alias='Car'></typeAlias>
+		<typeAlias type='tw.com.pai.model.Employee' alias='employee'></typeAlias>
 	</typeAliases>
 	<environments default='development'>
 		<environment id='development'>

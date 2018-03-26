@@ -3,7 +3,7 @@ package tw.com.pai.model;
 public class Car {
 	
 	private int 		id;
-	private String 			color;
+	private String 	    color;
 	
 	public Integer getId() {
 		return id;

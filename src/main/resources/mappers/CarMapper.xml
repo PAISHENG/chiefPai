@@ -3,14 +3,15 @@
   
 <!-- Mapper.java namespace -->
 <mapper namespace="tw.com.pai.dao.mybatis.CarMapper">
-<!-- Person.java namespace -->
-    <resultMap type="tw.com.pai.model.Car" id="CarResult">
+<!-- Car.java namespace -->
+    <resultMap type="Car" id="CarResult">
         <!-- map table "car"column to class "car" property -->
         <id column="id" property="id"  />
         <result property="color" column="color"/>   
     </resultMap>
-     
-    <select id="selectAllCar" resultMap="CarResult">
+    
+<!--     resultMap 對應id -->
+    <select id="selectAllCar" resultMap="CarResult" >
         SELECT * FROM car
     </select>
 </mapper>
