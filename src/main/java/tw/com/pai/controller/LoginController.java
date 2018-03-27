@@ -44,12 +44,12 @@ public class LoginController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String indexPage(ModelMap model) {
 		//logs debug message
-				if(logger.isDebugEnabled()){
-					logger.debug("getWelcome is executed!");
-				}
-
-				//logs exception
-				logger.error("This is Error message", new Exception("Testing"));
+//				if(logger.isDebugEnabled()){
+//					logger.debug("getWelcome is executed!");
+//				}
+//
+//				//logs exception
+//				logger.error("This is Error message", new Exception("Testing"));
 
 		model.addAttribute("message", "Spring 3 MVC Hello World");
 		return "index";

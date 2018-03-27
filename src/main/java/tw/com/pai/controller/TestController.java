@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import tw.com.pai.dao.mybatis.CarMapper;
 import tw.com.pai.model.Car;
 import tw.com.pai.service.CarService;
 import tw.com.pai.service.IMailService;
@@ -19,7 +20,7 @@ public class TestController {
 	private IMailService mailSender;
 	@Autowired
 	private CarService carService;
-	
+
 	@RequestMapping("mailTest")
 	public void sendMail(){
 		System.out.println("======start to sent email=============");
@@ -34,10 +35,19 @@ public class TestController {
 		}
 	}
 
-	@RequestMapping("carTest")
-	public void carQuery(){
+	@RequestMapping("carTest1")
+	public void carQuery1(){
 		System.out.println("======start to method about Car=============");
-		List<Car> result=carService.selectAllCar();
+		List<Car> result=carService.findAllCars();
+		for (Car temp : result){
+			System.out.println(temp.getId()+ " 的color 屬性為: " + temp.getColor() );
+		}
+	}
+	
+	@RequestMapping("carTest2")
+	public void carQuery2(){
+		System.out.println("======start to method about Car=============");
+		List<Car> result=carService.selectAllCar2();
 		for (Car temp : result){
 			System.out.println(temp.getId()+ " 的color 屬性為: " + temp.getColor() );
 		}
