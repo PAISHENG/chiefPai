@@ -19,7 +19,8 @@
 	<!-- @EnableTransactionManagement annotation to be used in on @Configuration -->
 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
 
-
+	<import resource="classpath:quartz/job-batch.xml" />	
+	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />

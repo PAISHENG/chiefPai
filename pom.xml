@@ -244,12 +244,18 @@
 			<version>2.3.0</version>
 		</dependency>
 
+		<!-- Spring Batch dependencies -->
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-core</artifactId>
+			<version>4.0.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-infrastructure</artifactId>
+			<version>4.0.1.RELEASE</version>
+		</dependency>
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.microsoft.sqlserver</groupId> -->
-		<!-- <artifactId>sqljdbc</artifactId> -->
-		<!-- <version>4.2.0</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
