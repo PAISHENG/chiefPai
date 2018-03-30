@@ -28,7 +28,7 @@ public class TestController {
         message += "<b>Wish you a nice day!</b><br>";
         message += "<font color=red>pai</font>";
 		try {
-			mailSender.htmlFormEmailSender("smtp.gmail.com", "587", "martinharrt@gmail.com", "hoc123251845", "martinharrt@gmail.com", "Hello my friend", message);
+			mailSender.htmlFormEmailSender("smtp.gmail.com", "587", "martinharrt@gmail.com", "123456", "martinharrt@gmail.com", "Hello my friend", message);
 		} catch (MessagingException e) {
 			 System.out.println("Failed to sent email.");
 			e.printStackTrace();
