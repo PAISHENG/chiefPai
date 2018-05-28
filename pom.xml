@@ -17,6 +17,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -34,6 +39,13 @@
 			<artifactId>super-csv</artifactId>
 			<version>2.1.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.abola/crawler -->
+		<dependency>
+			<groupId>com.github.abola</groupId>
+			<artifactId>crawler</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
