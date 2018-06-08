@@ -52,4 +52,10 @@ public class TestController {
 			System.out.println(temp.getId()+ " 的color 屬性為: " + temp.getColor() );
 		}
 	}
+	
+	@RequestMapping("chartList")
+	public String chartList(){
+		System.out.println("======start to chart List=============");
+		return "/charts/chartList";
+	}
 }

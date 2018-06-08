@@ -19,14 +19,25 @@
 	<!-- @EnableTransactionManagement annotation to be used in on @Configuration -->
 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
 
-	<import resource="classpath:quartz/job-batch.xml" />	
+<!-- 	<import resource="classpath:quartz/job-batch.xml" />	 -->
+<!-- 	<import resource="classpath:quartz/quartz-context.xml" /> -->
+
+	<!-- 屬性文件读入 -->
+    <bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:properties/jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/springData" />
-		<property name="username" value="root" />
-		<property name="password" value="hoc123251845" />
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 		<!-- <property name="defaultAutoCommit" value="false" /> -->
 	</bean>
 
@@ -90,7 +101,7 @@
 <!-- step1:Put static resources like cs, js or images into this folder webapp\resources -->
 <!-- step2:Create a Spring mvc:resources mapping -->
 <!-- step3:Include in JSP page via JSTL tag c:url or Spring tag spring:url -->
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/resources/**" location="/resources/theme1/" />
 	
 <!-- 	<bean id="customJobFactory" class="tw.com.pai.utils.CustomJobFactory"></bean>   -->
 <!--      定时任务配置 start   -->
