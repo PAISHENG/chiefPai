@@ -56,6 +56,13 @@ public class LoginController {
 
 	}
 	
+	@RequestMapping(value = "/socketDemo", method = RequestMethod.GET)
+	public String socketDemo(ModelMap model) {
+		model.addAttribute("message", "Spring 3 MVC Hello World");
+		return "socketDemo";
+
+	}
+	
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String testTabsPage(ModelMap model) {
 		model.addAttribute("key","test1");
@@ -100,15 +107,15 @@ public class LoginController {
 		return model;
 
 	}
-	@RequestMapping(value="{name}", method = RequestMethod.GET)
-	public @ResponseBody Shop getShopInJSON(@PathVariable String name) {
-
-		Shop shop = new Shop();
-		shop.setName(name);
-		shop.setStaffName(new String[]{"mkyong1", "mkyong2"});
-
-		return shop;
-	}
+//	@RequestMapping(value="{name}", method = RequestMethod.GET)
+//	public @ResponseBody Shop getShopInJSON(@PathVariable String name) {
+//
+//		Shop shop = new Shop();
+//		shop.setName(name);
+//		shop.setStaffName(new String[]{"mkyong1", "mkyong2"});
+//
+//		return shop;
+//	}
 	
 	@RequestMapping(value="time", method = RequestMethod.GET)
 	public @ResponseBody String getTime() {

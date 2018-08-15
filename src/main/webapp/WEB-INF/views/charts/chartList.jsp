@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="<c:url value="/resources/js/jquery-3.3.1.min.js" />"></script>
+<script src="<c:url value='/resources/js/jquery-3.3.1.min.js' />"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>

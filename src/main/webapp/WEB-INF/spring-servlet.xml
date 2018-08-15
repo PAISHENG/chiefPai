@@ -86,6 +86,8 @@
 	<context:component-scan base-package="tw.com.pai.service" />
 	<context:component-scan base-package="tw.com.pai.dao" />
 	<context:component-scan base-package="tw.com.pai.utils" />
+	<context:component-scan base-package="tw.com.pai.jobs" />
+	<context:component-scan base-package="tw.com.pai.config" />
 	<mvc:annotation-driven />
 
 	<bean
