@@ -12,8 +12,8 @@ public class TWSEDailyJobs {
 	* 
 	* 
 	*/
-//	@Scheduled(cron = "0 27 12 * * ?")
-	@Scheduled(cron = "*/10 * * * * ?")
+	@Scheduled(cron = "0 27 12 * * ?")
+//	@Scheduled(cron = "*/10 * * * * ?")
 	public void executeDailyZipFile() {
 		System.out.println("testSchedule");
 	}

@@ -12,6 +12,7 @@ import tw.com.pai.dao.mybatis.CarMapper;
 import tw.com.pai.model.Car;
 import tw.com.pai.service.CarService;
 import tw.com.pai.service.IMailService;
+import tw.com.pai.utils.ZipWorkUtils;
 
 @Controller
 public class TestController {
@@ -58,4 +59,13 @@ public class TestController {
 		System.out.println("======start to chart List=============");
 		return "/charts/chartList";
 	}
+	
+	
+	@RequestMapping("testZipWork")
+	public String testZipWork(){
+		System.out.println("======start to testZipWork=============");
+		ZipWorkUtils.doUnzipFile("C:\\Users\\scpai\\Desktop\\testZip\\", "sftp.zip", "C:\\Users\\scpai\\Desktop\\testZip\\");
+		return "/charts/chartList";
+	}
+	
 }
