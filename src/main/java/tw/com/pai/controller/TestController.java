@@ -8,10 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import tw.com.pai.dao.mybatis.CarMapper;
 import tw.com.pai.model.Car;
+import tw.com.pai.model.Stock;
+import tw.com.pai.model.hibernate.HUsers;
 import tw.com.pai.service.CarService;
 import tw.com.pai.service.IMailService;
+import tw.com.pai.service.IStockService;
+import tw.com.pai.service.IUserService;
 import tw.com.pai.utils.ZipWorkUtils;
 
 @Controller
@@ -21,6 +24,10 @@ public class TestController {
 	private IMailService mailSender;
 	@Autowired
 	private CarService carService;
+	@Autowired
+	private IStockService iStockService;
+	@Autowired
+	private IUserService  iUserService;
 
 	@RequestMapping("mailTest")
 	public void sendMail(){
@@ -68,4 +75,24 @@ public class TestController {
 		return "/charts/chartList";
 	}
 	
+	@RequestMapping("testStock")
+	public String testStockService(){
+		System.out.println("======start to testStock=============");
+		Stock data=new Stock();
+		data.setStockCode("10089");
+		data.setStockName("tw.test2");
+		iStockService.save(data);
+		return "/charts/chartList";
+	}
+	
+	@RequestMapping("testUsers")
+	public String testUsers(){
+		System.out.println("======start to testUsers=============");
+		HUsers data=new HUsers();
+		data.setFirstName("pai");
+		data.setLastName("sheng chieh");
+		data.setEmail("martinharrt@gmail.com");
+		iUserService.add(data);
+		return "/charts/chartList";
+	}
 }

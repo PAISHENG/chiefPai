@@ -29,6 +29,7 @@ import org.supercsv.prefs.CsvPreference;
 import tw.com.pai.model.Book;
 import tw.com.pai.model.Shop;
 import tw.com.pai.service.TWSEService;
+import tw.com.pai.utils.ConstantsUrls;
 
 @Controller
 public class LoginController {
@@ -41,7 +42,7 @@ public class LoginController {
 	@Autowired
 	TWSEService twseService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = ConstantsUrls.INEDX, method = RequestMethod.GET)
 	public String indexPage(ModelMap model) {
 		//logs debug message
 //				if(logger.isDebugEnabled()){
@@ -56,7 +57,7 @@ public class LoginController {
 
 	}
 	
-	@RequestMapping(value = "/socketDemo", method = RequestMethod.GET)
+	@RequestMapping(value = ConstantsUrls.WEB_SOCKET, method = RequestMethod.GET)
 	public String socketDemo(ModelMap model) {
 		model.addAttribute("message", "Spring 3 MVC Hello World");
 		return "socketDemo";

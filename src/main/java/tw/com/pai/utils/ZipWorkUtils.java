@@ -53,32 +53,4 @@ public class ZipWorkUtils {
 		}
 
 	}
-
-	// //取得壓縮檔內的下一個項目(一個壓縮的檔案或目錄，為壓縮時所建立的)
-	// ZipEntry zipEntry = zIn.getNextEntry();
-	//
-	// //設定解壓縮的目的資料夾
-	// String unZipDir = "C:/";
-	// if(!zipEntry.isDirectory()) {
-	//
-	// //先判斷上一層資料夾是否存在，若不存在則先建立資料夾，再解壓縮檔案
-	// File f1 = new File(unZipDir+zipEntry.getName());
-	// File parent = f1.getParentFile();
-	// if(!parent.exists()) {
-	// parent.mkdirs();
-	// }
-	//
-	// //開啟解壓縮欲寫入的檔案
-	// FileOutputStream fOut = new FileOutputStream(f1);
-	//
-	// //以byte讀取解壓縮後的資料再寫入檔案
-	// int byteNo1;
-	// byte[] b1 = new byte[64];
-	//
-	// while ((byteNo1=zIn.read(b1))>0) {
-	// fOut.write(b1, 0, byteNo1);
-	// }
-	// fOut.close();
-	// zIn.close();
-	// }
 }

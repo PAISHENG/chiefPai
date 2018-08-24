@@ -40,6 +40,9 @@
 		<property name="password" value="${jdbc.password}" />
 		<!-- <property name="defaultAutoCommit" value="false" /> -->
 	</bean>
+	
+<!-- 	hibernate xml -->
+	<import resource="classpath:hibernate.xml" />
 
 <!-- 	<bean id="txManager" -->
 <!-- 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->
