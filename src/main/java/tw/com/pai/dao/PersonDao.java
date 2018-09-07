@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import tw.com.pai.model.Person;
 
-
-
 @Repository
 public class PersonDao {
 
