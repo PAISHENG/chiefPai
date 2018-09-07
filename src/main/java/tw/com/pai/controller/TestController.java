@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import tw.com.pai.model.Car;
 import tw.com.pai.model.Stock;
 import tw.com.pai.model.hibernate.HUsers;
+import tw.com.pai.model.jpa.JMember;
 import tw.com.pai.service.CarService;
 import tw.com.pai.service.IMailService;
 import tw.com.pai.service.IStockService;
 import tw.com.pai.service.IUserService;
+import tw.com.pai.service.MemberService;
 import tw.com.pai.utils.ZipWorkUtils;
 
 @Controller
@@ -28,6 +30,8 @@ public class TestController {
 	private IStockService iStockService;
 	@Autowired
 	private IUserService  iUserService;
+	@Autowired
+	private MemberService  memberService;
 
 	@RequestMapping("mailTest")
 	public void sendMail(){
@@ -93,6 +97,22 @@ public class TestController {
 		data.setLastName("sheng chieh");
 		data.setEmail("martinharrt@gmail.com");
 		iUserService.add(data);
+		return "/charts/chartList";
+	}
+	
+	
+	@RequestMapping("testJpaMembers")
+	public String testJpaMembers(){
+		System.out.println("======start to testJpaMembers=============");
+		JMember data=new JMember();
+		data.setName("pai");
+		data.setGender(Integer.parseInt("0"));
+		data.setEmail("123@gmail.com");
+		data.setNickname("uu");
+		data.setScore(String.valueOf(0));
+		data.setPhone("0920100222");
+		data.setPassword("cc1234556");
+		memberService.addMember(data);
 		return "/charts/chartList";
 	}
 }

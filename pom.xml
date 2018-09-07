@@ -14,6 +14,7 @@
 		<spring.version>4.3.10.RELEASE</spring.version>
 		<dbunitVersion>2.5.3</dbunitVersion>
 		<mysql.connector.version>5.1.30</mysql.connector.version>
+		<hibernate.manager>4.2.5.Final</hibernate.manager>
 	</properties>
 
 	<dependencies>
@@ -122,6 +123,12 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.2.4.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.manager}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->

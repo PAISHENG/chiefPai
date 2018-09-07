@@ -10,9 +10,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-import tw.com.pai.utils.IHttpClientUtils;
+import tw.com.pai.utils.IHttpRequestUtils;
 
-public class HttpClientMethodImpl implements IHttpClientUtils {
+public class HttpClientMethodImpl implements IHttpRequestUtils {
 
 	@Override
 	public String getRequest(String url, Map<String, String> parms) {
@@ -45,6 +45,12 @@ public class HttpClientMethodImpl implements IHttpClientUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+
+	@Override
+	public String putRequest(String url, Map<String, String> parms) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
