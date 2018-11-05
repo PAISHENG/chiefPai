@@ -12,11 +12,13 @@ import tw.com.pai.model.Car;
 import tw.com.pai.model.Stock;
 import tw.com.pai.model.hibernate.HUsers;
 import tw.com.pai.model.jpa.JMember;
+import tw.com.pai.model.mybatis.MUser;
 import tw.com.pai.service.CarService;
 import tw.com.pai.service.IMailService;
 import tw.com.pai.service.IStockService;
 import tw.com.pai.service.IUserService;
 import tw.com.pai.service.MemberService;
+import tw.com.pai.service.features.AllUserService;
 import tw.com.pai.utils.ZipWorkUtils;
 
 @Controller
@@ -32,7 +34,9 @@ public class TestController {
 	private IUserService  iUserService;
 	@Autowired
 	private MemberService  memberService;
-
+	@Autowired
+	private AllUserService allUserService;
+	
 	@RequestMapping("mailTest")
 	public void sendMail(){
 		System.out.println("======start to sent email=============");
@@ -115,4 +119,23 @@ public class TestController {
 		memberService.addMember(data);
 		return "/charts/chartList";
 	}
+	
+	@RequestMapping("testMybatisUser")
+	public String testMybatisUser(){
+		System.out.println("======start to testMybatisUser=============");
+		MUser data=new MUser();
+		data.setFirstName("pai");
+		data.setLastName("chieh");
+		data.setEmail("123@gmail.com");
+		Long start= System.currentTimeMillis();
+		for(int i = 0; i < 10000000 ; i++){
+			System.out.println(i);
+			allUserService.insertUser(data);
+		}
+		Long end= System.currentTimeMillis();
+		
+		System.out.println("delta Time:" + (end-start));
+		return "/charts/chartList";
+	}
+
 }

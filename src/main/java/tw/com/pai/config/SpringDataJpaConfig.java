@@ -27,7 +27,7 @@ public class SpringDataJpaConfig {
 	private final String PROPERTY_USERNAME = "jdbc.username";
 	private final String PROPERTY_PASSWORD = "jdbc.password";
 	private final String PROPERTY_SHOW_SQL = "hibernate.show_sql";
-//	private final String PROPERTY_DIALECT = "hibernate.dialect";
+	private final String PROPERTY_DIALECT = "hibernate.dialect";
 	
 	@Autowired
 	private Environment environment;
@@ -54,7 +54,7 @@ public class SpringDataJpaConfig {
 	
 	public Properties hibernateProps() {
 		Properties properties = new Properties();
-//		properties.setProperty(PROPERTY_DIALECT, environment.getProperty(PROPERTY_DIALECT));
+		properties.setProperty(PROPERTY_DIALECT, environment.getProperty(PROPERTY_DIALECT));
 		properties.setProperty(PROPERTY_SHOW_SQL, environment.getProperty(PROPERTY_SHOW_SQL));
 		return properties;
 	}

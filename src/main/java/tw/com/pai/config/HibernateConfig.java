@@ -43,6 +43,7 @@ public class HibernateConfig {
 
 		Properties props = new Properties();
 		props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+		props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
 
 		factoryBean.setHibernateProperties(props);
 		factoryBean.setAnnotatedClasses(HUsers.class);
